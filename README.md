@@ -1,9 +1,9 @@
 // Dialog macro (paste into a Foundry macro):
-game["invincible-title-card"].showDialog();
+game["title-card-uwu"].showDialog();
 
 // Hardcoded macro:
-game["invincible-title-card"].show({
-  title:     "INVINCIBLE",
+game["title-card-uwu"].show({
+  title:     "TITLECARDUWU",
   subtitle1: "BASED ON THE COMIC BOOK BY",
   subtitle2: "Robert Kirkman, Cory Walker, & Ryan Ottley",
   variantId: null,  // null = follow progression

@@ -12,7 +12,7 @@ export class VariantManagerDialog extends HandlebarsApplicationMixin(Application
     tag:      "dialog",
     window:   {
       frame:     true,
-      title:     "INVINCIBLE.VariantManager.WindowTitle",
+      title:     "TITLECARDUWU.VariantManager.WindowTitle",
       resizable: false,
     },
     position: { width: 380 },
@@ -24,7 +24,7 @@ export class VariantManagerDialog extends HandlebarsApplicationMixin(Application
   };
 
   static PARTS = {
-    form: { template: "modules/invincible-title-card/templates/variant-manager.hbs" },
+    form: { template: "modules/title-card-uwu/templates/variant-manager.hbs" },
   };
 
   // ── Context ───────────────────────────────────────────────────────────────
@@ -48,13 +48,13 @@ export class VariantManagerDialog extends HandlebarsApplicationMixin(Application
       },
       maxIndex: all.length - 1,
       i18n: {
-        currentVariant: game.i18n.localize("INVINCIBLE.VariantManager.CurrentVariant"),
-        index:          game.i18n.localize("INVINCIBLE.VariantManager.Index"),
-        advance:        game.i18n.localize("INVINCIBLE.VariantManager.Advance"),
-        reset:          game.i18n.localize("INVINCIBLE.VariantManager.Reset"),
-        setIndex:       game.i18n.localize("INVINCIBLE.VariantManager.SetIndex"),
-        apply:          game.i18n.localize("INVINCIBLE.VariantManager.Apply"),
-        close:          game.i18n.localize("INVINCIBLE.VariantManager.Close"),
+        currentVariant: game.i18n.localize("TITLECARDUWU.VariantManager.CurrentVariant"),
+        index:          game.i18n.localize("TITLECARDUWU.VariantManager.Index"),
+        advance:        game.i18n.localize("TITLECARDUWU.VariantManager.Advance"),
+        reset:          game.i18n.localize("TITLECARDUWU.VariantManager.Reset"),
+        setIndex:       game.i18n.localize("TITLECARDUWU.VariantManager.SetIndex"),
+        apply:          game.i18n.localize("TITLECARDUWU.VariantManager.Apply"),
+        close:          game.i18n.localize("TITLECARDUWU.VariantManager.Close"),
       },
     };
   }

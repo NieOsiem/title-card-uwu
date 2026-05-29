@@ -14,7 +14,7 @@ import { getSetting, setSetting, SETTINGS } from "./settings.js";
 const VARIANTS = [
   {
     id:           "clean",
-    label:        "INVINCIBLE.Variants.Clean",
+    label:        "TITLECARDUWU.Variants.Clean",
     overlayImage: null,
     soundPath:    null,   // falls back to module setting
     textDistress: 0,
@@ -22,15 +22,15 @@ const VARIANTS = [
   // ── Future variants (uncomment and supply assets) ──────────────────────
   // {
   //   id:           "blood1",
-  //   label:        "INVINCIBLE.Variants.Blood1",
-  //   overlayImage: "modules/invincible-title-card/textures/blood1.webp",
+  //   label:        "TITLECARDUWU.Variants.Blood1",
+  //   overlayImage: "modules/title-card-uwu/textures/blood1.webp",
   //   soundPath:    null,
   //   textDistress: 0,
   // },
   // {
   //   id:           "gritty",
-  //   label:        "INVINCIBLE.Variants.Gritty",
-  //   overlayImage: "modules/invincible-title-card/textures/gritty.webp",
+  //   label:        "TITLECARDUWU.Variants.Gritty",
+  //   overlayImage: "modules/title-card-uwu/textures/gritty.webp",
   //   soundPath:    null,
   //   textDistress: 0.4,
   // },
@@ -86,7 +86,7 @@ export const VariantTracker = Object.freeze({
     if (overrideId) {
       const found = VARIANTS.find(v => v.id === overrideId);
       if (found) return found;
-      console.warn(`Invincible Title Card | Unknown variant id "${overrideId}", using current.`);
+      console.warn(`Title Card Uwu | Unknown variant id "${overrideId}", using current.`);
     }
     return this.getCurrent();
   },

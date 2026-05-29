@@ -19,7 +19,7 @@ export function registerSocketListener(onReceive) {
  */
 export function broadcastTitleCard(payload, onReceive) {
   if (!game.user.isGM) {
-    ui.notifications.warn(game.i18n.localize("INVINCIBLE.Notifications.GMOnly"));
+    ui.notifications.warn(game.i18n.localize("TITLECARDUWU.Notifications.GMOnly"));
     return;
   }
   game.socket.emit(SOCKET_NAME, payload);

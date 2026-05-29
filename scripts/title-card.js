@@ -38,8 +38,8 @@ export class TitleCardApplication extends ApplicationV2 {
 
   /** @override */
   static DEFAULT_OPTIONS = {
-    id:       "invincible-title-card",
-    classes:  ["invincible-title-card-overlay"],
+    id:       "title-card-uwu",
+    classes:  ["title-card-uwu-overlay"],
     popOut:   false,
     window:   { frame: false },
   };

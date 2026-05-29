@@ -14,7 +14,7 @@ export class TitleCardDialog extends HandlebarsApplicationMixin(ApplicationV2) {
     tag:      "dialog",
     window:   {
       frame: true,
-      title: "INVINCIBLE.Dialog.WindowTitle",
+      title: "TITLECARDUWU.Dialog.WindowTitle",
     },
     position: { width: 420 },
     actions:  {
@@ -24,7 +24,7 @@ export class TitleCardDialog extends HandlebarsApplicationMixin(ApplicationV2) {
   };
 
   static PARTS = {
-    form: { template: "modules/invincible-title-card/templates/dialog.hbs" },
+    form: { template: "modules/title-card-uwu/templates/dialog.hbs" },
   };
 
   // ── Context ─────────────────────────────────────────────────────────────
@@ -39,17 +39,17 @@ export class TitleCardDialog extends HandlebarsApplicationMixin(ApplicationV2) {
     return {
       variants,
       i18n: {
-        title:          game.i18n.localize("INVINCIBLE.Dialog.Title"),
-        titlePH:        game.i18n.localize("INVINCIBLE.Dialog.TitlePlaceholder"),
-        subtitle1:      game.i18n.localize("INVINCIBLE.Dialog.Subtitle1"),
-        subtitle1PH:    game.i18n.localize("INVINCIBLE.Dialog.Subtitle1Placeholder"),
-        subtitle2:      game.i18n.localize("INVINCIBLE.Dialog.Subtitle2"),
-        subtitle2PH:    game.i18n.localize("INVINCIBLE.Dialog.Subtitle2Placeholder"),
-        variant:        game.i18n.localize("INVINCIBLE.Dialog.Variant"),
-        currentLabel:   game.i18n.localize("INVINCIBLE.Dialog.CurrentLabel"),
-        show:           game.i18n.localize("INVINCIBLE.Dialog.Show"),
-        copyMacro:      game.i18n.localize("INVINCIBLE.Dialog.CopyMacro"),
-        cancel:         game.i18n.localize("INVINCIBLE.Dialog.Cancel"),
+        title:          game.i18n.localize("TITLECARDUWU.Dialog.Title"),
+        titlePH:        game.i18n.localize("TITLECARDUWU.Dialog.TitlePlaceholder"),
+        subtitle1:      game.i18n.localize("TITLECARDUWU.Dialog.Subtitle1"),
+        subtitle1PH:    game.i18n.localize("TITLECARDUWU.Dialog.Subtitle1Placeholder"),
+        subtitle2:      game.i18n.localize("TITLECARDUWU.Dialog.Subtitle2"),
+        subtitle2PH:    game.i18n.localize("TITLECARDUWU.Dialog.Subtitle2Placeholder"),
+        variant:        game.i18n.localize("TITLECARDUWU.Dialog.Variant"),
+        currentLabel:   game.i18n.localize("TITLECARDUWU.Dialog.CurrentLabel"),
+        show:           game.i18n.localize("TITLECARDUWU.Dialog.Show"),
+        copyMacro:      game.i18n.localize("TITLECARDUWU.Dialog.CopyMacro"),
+        cancel:         game.i18n.localize("TITLECARDUWU.Dialog.Cancel"),
       },
     };
   }
@@ -84,11 +84,11 @@ export class TitleCardDialog extends HandlebarsApplicationMixin(ApplicationV2) {
 
     try {
       await navigator.clipboard.writeText(script);
-      ui.notifications.info(game.i18n.localize("INVINCIBLE.Dialog.MacroCopied"));
+      ui.notifications.info(game.i18n.localize("TITLECARDUWU.Dialog.MacroCopied"));
     } catch {
-      console.log(`%c[Invincible Title Card] Hardcoded macro script:`, "font-weight:bold");
+      console.log(`%c[Title Card Uwu] Hardcoded macro script:`, "font-weight:bold");
       console.log(script);
-      ui.notifications.warn(game.i18n.localize("INVINCIBLE.Dialog.MacroCopyFailed"));
+      ui.notifications.warn(game.i18n.localize("TITLECARDUWU.Dialog.MacroCopyFailed"));
     }
   }
 }
@@ -110,7 +110,7 @@ export function generateMacroScript({ title, subtitle1 = "", subtitle2 = "", var
   const safe = (s) => JSON.stringify(s);
 
   return [
-    `// Invincible Title Card — hardcoded macro`,
+    `// Title Card Uwu — hardcoded macro`,
     `// Edit the values below to customise.`,
     `game["${MODULE_ID}"].show({`,
     `  title:     ${safe(title)},`,

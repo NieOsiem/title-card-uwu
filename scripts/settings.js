@@ -1,6 +1,6 @@
 
 
-export const MODULE_ID = "invincible-title-card";
+export const MODULE_ID = "title-card-uwu";
 
 /** Enum of all setting keys. Import this instead of writing strings. */
 export const SETTINGS = Object.freeze({
@@ -36,21 +36,21 @@ export function registerSettings() {
   // ── Font ────────────────────────────────────────────────────────────────
 
   game.settings.register(ns, S.FONT_SOURCE, {
-    name: "INVINCIBLE.Settings.FontSource.Name",
-    hint: "INVINCIBLE.Settings.FontSource.Hint",
+    name: "TITLECARDUWU.Settings.FontSource.Name",
+    hint: "TITLECARDUWU.Settings.FontSource.Hint",
     scope: "world",
     config: true,
     type: String,
     choices: {
-      google:  "INVINCIBLE.Settings.FontSource.Google",
-      foundry: "INVINCIBLE.Settings.FontSource.Foundry",
+      google:  "TITLECARDUWU.Settings.FontSource.Google",
+      foundry: "TITLECARDUWU.Settings.FontSource.Foundry",
     },
     default: "google",
   });
 
   game.settings.register(ns, S.GOOGLE_FONT_FAMILY, {
-    name: "INVINCIBLE.Settings.GoogleFontFamily.Name",
-    hint: "INVINCIBLE.Settings.GoogleFontFamily.Hint",
+    name: "TITLECARDUWU.Settings.GoogleFontFamily.Name",
+    hint: "TITLECARDUWU.Settings.GoogleFontFamily.Hint",
     scope: "world",
     config: true,
     type: String,
@@ -58,8 +58,8 @@ export function registerSettings() {
   });
 
   game.settings.register(ns, S.FOUNDRY_FONT_FAMILY, {
-    name: "INVINCIBLE.Settings.FoundryFontFamily.Name",
-    hint: "INVINCIBLE.Settings.FoundryFontFamily.Hint",
+    name: "TITLECARDUWU.Settings.FoundryFontFamily.Name",
+    hint: "TITLECARDUWU.Settings.FoundryFontFamily.Hint",
     scope: "world",
     config: true,
     type: String,
@@ -69,8 +69,8 @@ export function registerSettings() {
   // ── Audio ───────────────────────────────────────────────────────────────
 
   game.settings.register(ns, S.SOUND_PATH, {
-    name: "INVINCIBLE.Settings.SoundPath.Name",
-    hint: "INVINCIBLE.Settings.SoundPath.Hint",
+    name: "TITLECARDUWU.Settings.SoundPath.Name",
+    hint: "TITLECARDUWU.Settings.SoundPath.Hint",
     scope: "world",
     config: true,
     type: String,
@@ -81,8 +81,8 @@ export function registerSettings() {
   // ── Display ─────────────────────────────────────────────────────────────
 
   game.settings.register(ns, S.DISPLAY_DURATION, {
-    name: "INVINCIBLE.Settings.DisplayDuration.Name",
-    hint: "INVINCIBLE.Settings.DisplayDuration.Hint",
+    name: "TITLECARDUWU.Settings.DisplayDuration.Name",
+    hint: "TITLECARDUWU.Settings.DisplayDuration.Hint",
     scope: "world",
     config: true,
     type: Number,
@@ -91,8 +91,8 @@ export function registerSettings() {
   });
 
   game.settings.register(ns, S.BACKGROUND_COLOR, {
-    name: "INVINCIBLE.Settings.BackgroundColor.Name",
-    hint: "INVINCIBLE.Settings.BackgroundColor.Hint",
+    name: "TITLECARDUWU.Settings.BackgroundColor.Name",
+    hint: "TITLECARDUWU.Settings.BackgroundColor.Hint",
     scope: "world",
     config: true,
     type: String,
@@ -100,18 +100,18 @@ export function registerSettings() {
   });
 
   game.settings.register(ns, S.BACKGROUND_TEXTURE, {
-    name: "INVINCIBLE.Settings.BackgroundTexture.Name",
-    hint: "INVINCIBLE.Settings.BackgroundTexture.Hint",
+    name: "TITLECARDUWU.Settings.BackgroundTexture.Name",
+    hint: "TITLECARDUWU.Settings.BackgroundTexture.Hint",
     scope: "world",
     config: true,
     type: String,
-    default: "modules/invincible-title-card/textures/grunge.webp",
+    default: "modules/title-card-uwu/textures/grunge.webp",
     filePicker: "imagevideo",
   });
 
   game.settings.register(ns, S.TEXTURE_OPACITY, {
-    name: "INVINCIBLE.Settings.TextureOpacity.Name",
-    hint: "INVINCIBLE.Settings.TextureOpacity.Hint",
+    name: "TITLECARDUWU.Settings.TextureOpacity.Name",
+    hint: "TITLECARDUWU.Settings.TextureOpacity.Hint",
     scope: "world",
     config: true,
     type: Number,
@@ -120,8 +120,8 @@ export function registerSettings() {
   });
 
   game.settings.register(ns, S.TEXT_COLOR, {
-    name: "INVINCIBLE.Settings.TextColor.Name",
-    hint: "INVINCIBLE.Settings.TextColor.Hint",
+    name: "TITLECARDUWU.Settings.TextColor.Name",
+    hint: "TITLECARDUWU.Settings.TextColor.Hint",
     scope: "world",
     config: true,
     type: String,
@@ -129,8 +129,8 @@ export function registerSettings() {
   });
 
   game.settings.register(ns, S.ZOOM_AMOUNT, {
-    name: "INVINCIBLE.Settings.ZoomAmount.Name",
-    hint: "INVINCIBLE.Settings.ZoomAmount.Hint",
+    name: "TITLECARDUWU.Settings.ZoomAmount.Name",
+    hint: "TITLECARDUWU.Settings.ZoomAmount.Hint",
     scope: "world",
     config: true,
     type: Number,

@@ -41,7 +41,7 @@ Hooks.on("renderSettingsConfig", (_app, html) => {
 
   const btn = document.createElement("button");
   btn.type        = "button";
-  btn.textContent = game.i18n.localize("INVINCIBLE.Settings.VariantManager.Label");
+  btn.textContent = game.i18n.localize("TITLECARDUWU.Settings.VariantManager.Label");
   btn.style.marginTop = "0.5rem";
   btn.addEventListener("click", () => new VariantManagerDialog().render({ force: true }));
 
@@ -57,12 +57,12 @@ Hooks.on("renderSettingsConfig", (_app, html) => {
  */
 async function _gmShow(opts) {
   if (!game.user.isGM) {
-    return ui.notifications.error(game.i18n.localize("INVINCIBLE.Errors.GMOnly"));
+    return ui.notifications.error(game.i18n.localize("TITLECARDUWU.Errors.GMOnly"));
   }
 
   const title = (opts.title ?? "").trim();
   if (!title) {
-    return ui.notifications.warn("Invincible Title Card: title cannot be empty.");
+    return ui.notifications.warn("Title Card Uwu: title cannot be empty.");
   }
 
   const payload = {
@@ -85,7 +85,7 @@ async function _gmShow(opts) {
 
 function _openDialog() {
   if (!game.user.isGM) {
-    return ui.notifications.error(game.i18n.localize("INVINCIBLE.Errors.GMOnly"));
+    return ui.notifications.error(game.i18n.localize("TITLECARDUWU.Errors.GMOnly"));
   }
   new TitleCardDialog().render({ force: true });
 }

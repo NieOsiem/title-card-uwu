@@ -1,5 +1,5 @@
 {
-  "INVINCIBLE": {
+  "TITLECARDUWU": {
     "Settings": {
       "FontSource": {
         "Name": "Font Source",
@@ -29,7 +29,7 @@
       },
       "BackgroundTexture": {
         "Name": "Background Texture",
-        "Hint": "Image path overlaid on the background color for a grungy look. Leave empty to disable. The bundled default is modules/invincible-title-card/textures/grunge.webp."
+        "Hint": "Image path overlaid on the background color for a grungy look. Leave empty to disable. The bundled default is modules/title-card-uwu/textures/grunge.webp."
       },
       "TextureOpacity": {
         "Name": "Texture Opacity (%)",
@@ -53,9 +53,9 @@
       "Clean": "Clean"
     },
     "Dialog": {
-      "WindowTitle": "Invincible Title Card",
+      "WindowTitle": "Title Card Uwu",
       "Title": "Title",
-      "TitlePlaceholder": "INVINCIBLE",
+      "TitlePlaceholder": "TITLECARDUWU",
       "Subtitle1": "Subtitle Line 1",
       "Subtitle1Placeholder": "BASED ON THE COMIC BOOK BY",
       "Subtitle2": "Subtitle Line 2",
@@ -83,7 +83,7 @@
       "Showing": "Showing title card: {title}"
     },
     "Errors": {
-      "GMOnly": "Only the GM can trigger the Invincible Title Card."
+      "GMOnly": "Only the GM can trigger the Title Card Uwu."
     }
   }
 }
