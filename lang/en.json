@@ -1,0 +1,89 @@
+{
+  "INVINCIBLE": {
+    "Settings": {
+      "FontSource": {
+        "Name": "Font Source",
+        "Hint": "Where to load the title font from.",
+        "Google": "Google Fonts (requires internet)",
+        "Foundry": "Foundry Font Manager"
+      },
+      "GoogleFontFamily": {
+        "Name": "Google Font Family",
+        "Hint": "Font family name as it appears on Google Fonts (e.g. 'Oswald', 'Alfa Slab One'). The module requests the boldest available weight automatically."
+      },
+      "FoundryFontFamily": {
+        "Name": "Foundry Font Family",
+        "Hint": "Exact font family name as configured in Foundry's Font Management settings."
+      },
+      "SoundPath": {
+        "Name": "Impact Sound",
+        "Hint": "Path to the audio file played when the title card appears. Leave empty for no sound."
+      },
+      "DisplayDuration": {
+        "Name": "Display Duration (ms)",
+        "Hint": "How long the title card is shown, in milliseconds."
+      },
+      "BackgroundColor": {
+        "Name": "Background Color",
+        "Hint": "Hex color code for the card background (e.g. #1db0f6)."
+      },
+      "BackgroundTexture": {
+        "Name": "Background Texture",
+        "Hint": "Image path overlaid on the background color for a grungy look. Leave empty to disable. The bundled default is modules/invincible-title-card/textures/grunge.webp."
+      },
+      "TextureOpacity": {
+        "Name": "Texture Opacity (%)",
+        "Hint": "How strongly the background texture shows through (0 = invisible, 100 = full)."
+      },
+      "TextColor": {
+        "Name": "Text Color",
+        "Hint": "Hex color code for all title card text (e.g. #f5e642)."
+      },
+      "ZoomAmount": {
+        "Name": "Zoom Amount (%)",
+        "Hint": "How far the card zooms in while displayed. The zoom starts fast and asymptotically slows. 0 disables zoom."
+      },
+      "VariantManager": {
+        "Name": "Variant Progression",
+        "Label": "Manage Variants",
+        "Hint": "Advance, reset, or set the current variant in the progression sequence."
+      }
+    },
+    "Variants": {
+      "Clean": "Clean"
+    },
+    "Dialog": {
+      "WindowTitle": "Invincible Title Card",
+      "Title": "Title",
+      "TitlePlaceholder": "INVINCIBLE",
+      "Subtitle1": "Subtitle Line 1",
+      "Subtitle1Placeholder": "BASED ON THE COMIC BOOK BY",
+      "Subtitle2": "Subtitle Line 2",
+      "Subtitle2Placeholder": "Robert Kirkman, Cory Walker, & Ryan Ottley",
+      "Variant": "Variant",
+      "CurrentLabel": "Current",
+      "Show": "Show",
+      "CopyMacro": "Copy as Macro",
+      "Cancel": "Cancel",
+      "MacroCopied": "Hardcoded macro copied to clipboard. Paste it into a new Foundry macro.",
+      "MacroCopyFailed": "Could not copy to clipboard. Open the browser console to retrieve the macro."
+    },
+    "VariantManager": {
+      "WindowTitle": "Variant Progression Manager",
+      "CurrentVariant": "Current Variant",
+      "Index": "Index",
+      "Advance": "Advance to Next",
+      "Reset": "Reset to First",
+      "SetIndex": "Set to Index",
+      "Apply": "Apply",
+      "Close": "Close"
+    },
+    "Notifications": {
+      "GMOnly": "Only the GM can show a title card.",
+      "Showing": "Showing title card: {title}"
+    },
+    "Errors": {
+      "GMOnly": "Only the GM can trigger the Invincible Title Card."
+    }
+  }
+}

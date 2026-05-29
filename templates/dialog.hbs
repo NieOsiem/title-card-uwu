@@ -1,0 +1,47 @@
+{{!-- templates/dialog.hbs --}}
+<div class="itc-dialog">
+
+  <div class="form-group">
+    <label for="itc-title">{{i18n.title}}</label>
+    <input id="itc-title"
+           type="text"
+           placeholder="{{i18n.titlePH}}"
+           autofocus />
+  </div>
+
+  <div class="form-group">
+    <label for="itc-subtitle1">{{i18n.subtitle1}}</label>
+    <input id="itc-subtitle1"
+           type="text"
+           placeholder="{{i18n.subtitle1PH}}" />
+  </div>
+
+  <div class="form-group">
+    <label for="itc-subtitle2">{{i18n.subtitle2}}</label>
+    <input id="itc-subtitle2"
+           type="text"
+           placeholder="{{i18n.subtitle2PH}}" />
+  </div>
+
+  <div class="form-group">
+    <label for="itc-variant">{{i18n.variant}}</label>
+    <select id="itc-variant">
+      <option value="__current__">— {{i18n.currentLabel}} —</option>
+      {{#each variants}}
+      <option value="{{id}}" {{#if isCurrent}}selected{{/if}}>
+        {{label}}
+      </option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="itc-dialog-buttons">
+    <button type="button" data-action="show">
+      {{i18n.show}}
+    </button>
+    <button type="button" data-action="copyMacro">
+      {{i18n.copyMacro}}
+    </button>
+  </div>
+
+</div>

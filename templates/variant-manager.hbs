@@ -1,0 +1,52 @@
+{{!-- templates/variant-manager.hbs --}}
+<div class="itc-variant-manager">
+
+  <div class="itc-vm-current">
+    <span class="itc-vm-label">{{i18n.currentVariant}}:</span>
+    <strong>{{current.label}}</strong>
+    <span class="itc-vm-index">({{i18n.index}} {{current.index}})</span>
+  </div>
+
+  <table class="itc-vm-table">
+    <thead>
+      <tr>
+        <th>{{i18n.index}}</th>
+        <th>{{i18n.currentVariant}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each variants}}
+      <tr class="{{#if isCurrent}}itc-vm-row-active{{/if}}">
+        <td>{{@index}}</td>
+        <td>{{label}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <div class="itc-vm-controls">
+
+    <div class="itc-vm-row">
+      <button type="button" data-action="advance">
+        {{i18n.advance}}
+      </button>
+      <button type="button" data-action="reset">
+        {{i18n.reset}}
+      </button>
+    </div>
+
+    <div class="itc-vm-row itc-vm-set-row">
+      <label for="itc-set-index-input">{{i18n.setIndex}}:</label>
+      <input id="itc-set-index-input"
+             type="number"
+             min="0"
+             max="{{maxIndex}}"
+             value="{{current.index}}" />
+      <button type="button" data-action="setIndex">
+        {{i18n.apply}}
+      </button>
+    </div>
+
+  </div>
+
+</div>
