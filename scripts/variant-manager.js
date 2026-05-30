@@ -1,5 +1,4 @@
-
-import { VariantTracker }   from "./variants.js";
+import { VariantTracker }       from "./variants.js";
 import { getSetting, SETTINGS } from "./settings.js";
 
 const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
@@ -27,23 +26,21 @@ export class VariantManagerDialog extends HandlebarsApplicationMixin(Application
     form: { template: "modules/title-card-uwu/templates/variant-manager.hbs" },
   };
 
-  // ── Context ───────────────────────────────────────────────────────────────
-
   async _prepareContext(_options) {
     const all     = VariantTracker.getAll();
     const current = VariantTracker.getCurrent();
-    const index   = getSetting(SETTINGS.CURRENT_VARIANT_INDEX);
+    const currentIndex = getSetting(SETTINGS.CURRENT_VARIANT_INDEX);
 
     return {
       variants: all.map((v, i) => ({
         ...v,
-        index,
+        index:     i,
         isCurrent: v.id === current.id,
-        label: game.i18n.localize(v.label),
+        label:     game.i18n.localize(v.label),
       })),
       current: {
         ...current,
-        index,
+        index: currentIndex,
         label: game.i18n.localize(current.label),
       },
       maxIndex: all.length - 1,
@@ -58,8 +55,6 @@ export class VariantManagerDialog extends HandlebarsApplicationMixin(Application
       },
     };
   }
-
-  // ── Actions ───────────────────────────────────────────────────────────────
 
   static async #onAdvance(_event, _target) {
     await VariantTracker.advance();
