@@ -60,7 +60,7 @@
       },
       "TitleSizeVw": {
         "Name": "Title Size (vw)",
-        "Hint": "Font size of the main title in viewport-width units (8–40). Larger = bigger text."
+        "Hint": "Font size of the main title in viewport-width units (8–60). Larger = bigger text."
       },
       "VerticalPosition": {
         "Name": "Vertical Position (%)",
@@ -73,6 +73,22 @@
       "SubtitleSpacing": {
         "Name": "Subtitle Spacing (vh)",
         "Hint": "Vertical gap between the title line and the subtitle block."
+      },
+      "TitleScaleY": {
+        "Name": "Title Vertical Stretch",
+        "Hint": "Stretches the title text vertically. 1.0 = normal, 2.0 = double height."
+      },
+      "TitlePerspective": {
+        "Name": "Title Perspective (px)",
+        "Hint": "Controls the strength of the 3D perspective taper. Lower values = more extreme taper."
+      },
+      "TitleRotateX": {
+        "Name": "Title Tilt (degrees)",
+        "Hint": "Tilts the top of the title away from the viewer, creating a trapezoid taper effect."
+      },
+      "TitleArcDepth": {
+        "Name": "Title Arc Depth (%)",
+        "Hint": "How far the bottom of the title scoops inward as an arc. 0 = flat bottom."
       },
       "VariantManager": {
         "Name": "Variant Progression",

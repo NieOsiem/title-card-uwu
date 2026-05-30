@@ -4,13 +4,14 @@
   position:   fixed;
   inset:      0;
   z-index:    99999;
+  overflow:   hidden;
 }
 
 .itc-wrapper {
-  position:     absolute;
-  inset:        0;
-  overflow:     hidden;
-  will-change:  transform;
+  position:    absolute;
+  inset:       0;
+  will-change: transform;
+  /* overflow removed — rotateX on child title would be clipped otherwise */
 }
 
 /* ── 2. Texture / overlay image layers ────────────────────────────────────── */
@@ -37,7 +38,7 @@
 
 /* ── 3. Title text ─────────────────────────────────────────────────────────── */
 
-/* font-size is set inline from the titleSizeVw setting */
+/* top & transform are set inline for vertical positioning */
 .itc-content {
   position:        absolute;
   z-index:         2;
@@ -48,18 +49,24 @@
   flex-direction:  column;
   align-items:     center;
   will-change:     transform;
-  /* top & transform are set inline for vertical positioning */
 }
 
+/* perspective is set inline; this just ensures correct layout behaviour */
+.itc-title-perspective {
+  display:         flex;
+  justify-content: center;
+  width:           100%;
+}
+
+/* transform (rotateX + scaleY) and clip-path are set inline */
 .itc-title {
   display:        block;
   font-weight:    700;
   line-height:    0.9;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  -webkit-text-stroke: clamp(2px, 0.4vw, 6px) rgba(0, 0, 0, 0.5);
-  white-space: nowrap;
-  overflow:    hidden;
+  white-space:    nowrap;
+  overflow:       visible;
 }
 
 /* ── 4. Subtitle block ─────────────────────────────────────────────────────── */

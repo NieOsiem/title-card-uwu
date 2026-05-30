@@ -22,6 +22,11 @@ export const SETTINGS = Object.freeze({
   VERTICAL_POSITION:        "verticalPosition",
   FADE_DURATION:            "fadeDuration",
   SUBTITLE_SPACING:         "subtitleSpacing",
+  // Title transform
+  TITLE_SCALE_Y:            "titleScaleY",
+  TITLE_PERSPECTIVE:        "titlePerspective",
+  TITLE_ROTATE_X:           "titleRotateX",
+  TITLE_ARC_DEPTH:          "titleArcDepth",
   // Internal
   CURRENT_VARIANT_INDEX:    "currentVariantIndex",
 });
@@ -60,7 +65,6 @@ export function registerSettings() {
     default: "Oswald",
   });
 
-  // Registered as String; renderSettingsConfig swaps the <input> for a <select>
   game.settings.register(ns, S.FOUNDRY_FONT_FAMILY, {
     name:    "TITLECARDUWU.Settings.FoundryFontFamily.Name",
     hint:    "TITLECARDUWU.Settings.FoundryFontFamily.Hint",
@@ -154,7 +158,7 @@ export function registerSettings() {
     name:    "TITLECARDUWU.Settings.TitleSizeVw.Name",
     hint:    "TITLECARDUWU.Settings.TitleSizeVw.Hint",
     scope:   "world", config: true, type: Number,
-    range:   { min: 8, max: 40, step: 1 },
+    range:   { min: 8, max: 60, step: 1 },
     default: 22,
   });
 
@@ -182,6 +186,40 @@ export function registerSettings() {
     default: 2.5,
   });
 
+  // ── Title transform ──────────────────────────────────────────────────────
+
+  game.settings.register(ns, S.TITLE_SCALE_Y, {
+    name:    "TITLECARDUWU.Settings.TitleScaleY.Name",
+    hint:    "TITLECARDUWU.Settings.TitleScaleY.Hint",
+    scope:   "world", config: true, type: Number,
+    range:   { min: 1.0, max: 3.0, step: 0.05 },
+    default: 1.3,
+  });
+
+  game.settings.register(ns, S.TITLE_PERSPECTIVE, {
+    name:    "TITLECARDUWU.Settings.TitlePerspective.Name",
+    hint:    "TITLECARDUWU.Settings.TitlePerspective.Hint",
+    scope:   "world", config: true, type: Number,
+    range:   { min: 50, max: 800, step: 10 },
+    default: 250,
+  });
+
+  game.settings.register(ns, S.TITLE_ROTATE_X, {
+    name:    "TITLECARDUWU.Settings.TitleRotateX.Name",
+    hint:    "TITLECARDUWU.Settings.TitleRotateX.Hint",
+    scope:   "world", config: true, type: Number,
+    range:   { min: 0, max: 30, step: 1 },
+    default: 8,
+  });
+
+  game.settings.register(ns, S.TITLE_ARC_DEPTH, {
+    name:    "TITLECARDUWU.Settings.TitleArcDepth.Name",
+    hint:    "TITLECARDUWU.Settings.TitleArcDepth.Hint",
+    scope:   "world", config: true, type: Number,
+    range:   { min: 0, max: 80, step: 1 },
+    default: 20,
+  });
+
   // ── Internal ─────────────────────────────────────────────────────────────
 
   game.settings.register(ns, S.CURRENT_VARIANT_INDEX, {
@@ -189,13 +227,6 @@ export function registerSettings() {
   });
 }
 
-/**
- * Replace plain <input> elements for Foundry font settings with <select>
- * elements populated from FontConfig.getAvailableFonts(), which includes
- * all loaded fonts: built-in, module-provided, and user-added Additional Fonts.
- *
- * @param {HTMLElement} section
- */
 export function injectFontSelectors(section) {
   const fontKeys = FontConfig.getAvailableFonts().sort();
   if (!fontKeys.length) return;

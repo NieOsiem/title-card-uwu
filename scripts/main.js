@@ -89,7 +89,7 @@ function _resolveFont(sourceKey, googleKey, foundryKey) {
 function _resolveOptions(variantId) {
   const variant = VariantTracker.getForShow(variantId);
 
-  const title    = _resolveFont(SETTINGS.FONT_SOURCE,         SETTINGS.GOOGLE_FONT_FAMILY,  SETTINGS.FOUNDRY_FONT_FAMILY);
+  const title    = _resolveFont(SETTINGS.FONT_SOURCE,          SETTINGS.GOOGLE_FONT_FAMILY,  SETTINGS.FOUNDRY_FONT_FAMILY);
   const subtitle = _resolveFont(SETTINGS.SUBTITLE_FONT_SOURCE, SETTINGS.SUBTITLE_GOOGLE_FONT, SETTINGS.SUBTITLE_FOUNDRY_FONT);
 
   return {
@@ -109,5 +109,9 @@ function _resolveOptions(variantId) {
     subtitleSpacing:    getSetting(SETTINGS.SUBTITLE_SPACING),
     soundPath:          variant.soundPath ?? (getSetting(SETTINGS.SOUND_PATH).trim() || null),
     overlayImage:       variant.overlayImage ?? null,
+    titleScaleY:        getSetting(SETTINGS.TITLE_SCALE_Y),
+    titlePerspective:   getSetting(SETTINGS.TITLE_PERSPECTIVE),
+    titleRotateX:       getSetting(SETTINGS.TITLE_ROTATE_X),
+    titleArcDepth:      getSetting(SETTINGS.TITLE_ARC_DEPTH),
   };
 }
