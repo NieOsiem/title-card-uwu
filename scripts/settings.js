@@ -228,7 +228,7 @@ export function registerSettings() {
 }
 
 export function injectFontSelectors(section) {
-  const fontKeys = FontConfig.getAvailableFonts().sort();
+  const fontKeys = foundry.applications.settings.menus.FontConfig.getAvailableFonts().sort();
   if (!fontKeys.length) return;
 
   for (const key of [SETTINGS.FOUNDRY_FONT_FAMILY, SETTINGS.SUBTITLE_FOUNDRY_FONT]) {
