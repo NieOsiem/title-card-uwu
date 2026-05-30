@@ -1,23 +1,38 @@
 {
   "TITLECARDUWU": {
+    "DefaultTitle": "TITLE CARD UwU",
     "Settings": {
+      "TitleFontSource": {
+        "Name": "Title Font Source",
+        "Hint": "Where to load the title font from."
+      },
+      "GoogleFontFamily": {
+        "Name": "Title Google Font",
+        "Hint": "Font family name as it appears on Google Fonts (e.g. 'Oswald', 'Alfa Slab One'). Bold weight is requested automatically."
+      },
+      "FoundryFontFamily": {
+        "Name": "Title Foundry Font",
+        "Hint": "Select from fonts installed in Foundry's Font Manager (includes Additional Fonts)."
+      },
+      "SubtitleFontSource": {
+        "Name": "Subtitle Font Source",
+        "Hint": "Where to load the subtitle font from."
+      },
+      "SubtitleGoogleFont": {
+        "Name": "Subtitle Google Font",
+        "Hint": "Font family name as it appears on Google Fonts. Used for subtitle lines 1 and 2."
+      },
+      "SubtitleFoundryFont": {
+        "Name": "Subtitle Foundry Font",
+        "Hint": "Select from fonts installed in Foundry's Font Manager. Used for subtitle lines 1 and 2."
+      },
       "FontSource": {
-        "Name": "Font Source",
-        "Hint": "Where to load the title font from.",
         "Google": "Google Fonts (requires internet)",
         "Foundry": "Foundry Font Manager"
       },
-      "GoogleFontFamily": {
-        "Name": "Google Font Family",
-        "Hint": "Font family name as it appears on Google Fonts (e.g. 'Oswald', 'Alfa Slab One'). The module requests the boldest available weight automatically."
-      },
-      "FoundryFontFamily": {
-        "Name": "Foundry Font Family",
-        "Hint": "Exact font family name as configured in Foundry's Font Management settings."
-      },
       "SoundPath": {
         "Name": "Impact Sound",
-        "Hint": "Path to the audio file played when the title card appears. Leave empty for no sound."
+        "Hint": "Audio file played when the title card appears. Leave empty for no sound."
       },
       "DisplayDuration": {
         "Name": "Display Duration (ms)",
@@ -25,11 +40,11 @@
       },
       "BackgroundColor": {
         "Name": "Background Color",
-        "Hint": "Hex color code for the card background (e.g. #1db0f6)."
+        "Hint": "Hex color for the card background (e.g. #1db0f6)."
       },
       "BackgroundTexture": {
         "Name": "Background Texture",
-        "Hint": "Image path overlaid on the background color for a grungy look. Leave empty to disable. The bundled default is modules/title-card-uwu/textures/grunge.webp."
+        "Hint": "Image overlaid on the background color. Leave empty to disable."
       },
       "TextureOpacity": {
         "Name": "Texture Opacity (%)",
@@ -37,11 +52,19 @@
       },
       "TextColor": {
         "Name": "Text Color",
-        "Hint": "Hex color code for all title card text (e.g. #f5e642)."
+        "Hint": "Hex color for all title card text (e.g. #f5e642)."
       },
       "ZoomAmount": {
         "Name": "Zoom Amount (%)",
-        "Hint": "How far the card zooms in while displayed. The zoom starts fast and asymptotically slows. 0 disables zoom."
+        "Hint": "How far the card zooms in while displayed. 0 disables zoom."
+      },
+      "TitleSizeVw": {
+        "Name": "Title Size (vw)",
+        "Hint": "Font size of the main title in viewport-width units (8–40). Larger = bigger text."
+      },
+      "VerticalPosition": {
+        "Name": "Vertical Position (%)",
+        "Hint": "Where the content sits vertically (0 = top, 50 = centre, 100 = bottom)."
       },
       "VariantManager": {
         "Name": "Variant Progression",
@@ -79,8 +102,7 @@
       "Close": "Close"
     },
     "Notifications": {
-      "GMOnly": "Only the GM can show a title card.",
-      "Showing": "Showing title card: {title}"
+      "GMOnly": "Only the GM can show a title card."
     },
     "Errors": {
       "GMOnly": "Only the GM can trigger the Title Card Uwu."

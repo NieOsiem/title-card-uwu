@@ -8,28 +8,30 @@ import { startZoom, fadeIn, fadeOut } from "./animator.js";
  * @property {string}      backgroundColor
  * @property {string}      textColor
  * @property {string}      backgroundTexture
- * @property {number}      textureOpacity    - 0–100
- * @property {string}      fontFamily
- * @property {string|null} fontUrl
+ * @property {number}      textureOpacity      - 0–100
+ * @property {string}      titleFontFamily
+ * @property {string|null} titleFontUrl
+ * @property {string}      subtitleFontFamily
+ * @property {string|null} subtitleFontUrl
  * @property {string|null} overlayImage
  * @property {string|null} soundPath
- * @property {number}      displayDuration   - ms
+ * @property {number}      displayDuration     - ms
  * @property {number}      zoomPercent
+ * @property {number}      titleSizeVw
+ * @property {number}      verticalPosition    - 0–100
  */
 
 class TitleCard {
-  /** @type {HTMLElement|null} */
   #el = null;
   #handles = [];
   #closeTimer = null;
 
-  /** @param {TitleCardOptions} opts */
   constructor(opts) {
     this.opts = opts;
   }
 
   show() {
-    this.#injectFont();
+    this.#injectFonts();
     this.#el = this.#buildDOM();
     document.body.appendChild(this.#el);
     this.#startAnimations();
@@ -67,7 +69,7 @@ class TitleCard {
       const tex = document.createElement("div");
       tex.classList.add("itc-texture");
       tex.style.backgroundImage = `url("${o.backgroundTexture}")`;
-      tex.style.opacity = String(o.textureOpacity / 100);
+      tex.style.opacity         = String(o.textureOpacity / 100);
       wrapper.appendChild(tex);
     }
 
@@ -80,20 +82,23 @@ class TitleCard {
 
     const content = document.createElement("div");
     content.classList.add("itc-content");
+    content.style.top       = `${o.verticalPosition}%`;
+    content.style.transform = "translateY(-50%)";
 
     const titleEl = document.createElement("div");
     titleEl.classList.add("itc-title");
-    titleEl.textContent = o.title;
-    titleEl.style.color = o.textColor;
-    titleEl.style.fontFamily = `"${o.fontFamily}", "Oswald", sans-serif`;
+    titleEl.textContent      = o.title;
+    titleEl.style.color      = o.textColor;
+    titleEl.style.fontFamily = `"${o.titleFontFamily}", "Oswald", sans-serif`;
+    titleEl.style.fontSize   = `clamp(2rem, ${o.titleSizeVw}vw, 28rem)`;
     content.appendChild(titleEl);
 
     if (o.subtitle1 || o.subtitle2) {
       const block = document.createElement("div");
       block.classList.add("itc-subtitle-block");
-      block.style.color = o.textColor;
-      block.style.fontFamily = `"${o.fontFamily}", "Oswald", sans-serif`;
-      block.style.opacity = "0";
+      block.style.color      = o.textColor;
+      block.style.fontFamily = `"${o.subtitleFontFamily}", "Oswald", sans-serif`;
+      block.style.opacity    = "0";
 
       if (o.subtitle1) {
         const s1 = document.createElement("div");
@@ -125,7 +130,6 @@ class TitleCard {
         startZoom(wrapper, { zoomPercent: o.zoomPercent, duration: o.displayDuration })
       );
     }
-
     if (block) {
       this.#handles.push(fadeIn(block, { delay: 500, duration: 400 }));
     }
@@ -134,44 +138,39 @@ class TitleCard {
   async #beginClose() {
     this.#handles.forEach(h => h.cancel());
     this.#handles = [];
-
     const wrapper = this.#el?.querySelector(".itc-wrapper");
-    if (wrapper) {
-      await fadeOut(wrapper, { duration: 400 }).finished;
-    }
+    if (wrapper) await fadeOut(wrapper, { duration: 400 }).finished;
     this.#el?.remove();
     this.#el = null;
   }
 
-  #injectFont() {
-    const { fontUrl } = this.opts;
-    if (!fontUrl || document.getElementById("itc-google-font")) return;
-    const link  = document.createElement("link");
-    link.id     = "itc-google-font";
-    link.rel    = "stylesheet";
-    link.href   = fontUrl;
-    document.head.appendChild(link);
+  #injectFonts() {
+    _injectGoogleFont("itc-google-font-title",    this.opts.titleFontUrl);
+    _injectGoogleFont("itc-google-font-subtitle", this.opts.subtitleFontUrl);
   }
+}
+
+function _injectGoogleFont(id, url) {
+  if (!url || document.getElementById(id)) return;
+  const link = document.createElement("link");
+  link.id    = id;
+  link.rel   = "stylesheet";
+  link.href  = url;
+  document.head.appendChild(link);
 }
 
 // ── Module-level singleton ────────────────────────────────────────────────────
 
 let _active = null;
 
-/**
- * @param {object} payload   - { title, subtitle1, subtitle2, variantId }
- * @param {object} resolved  - Pre-resolved display options from settings (see main.js)
- */
 export function showTitleCard(payload, resolved) {
   _active?.dismiss();
-
   const card = new TitleCard({
     title:     payload.title     || "",
     subtitle1: payload.subtitle1 || "",
     subtitle2: payload.subtitle2 || "",
     ...resolved,
   });
-
   _active = card;
   card.show();
 }

@@ -1,4 +1,3 @@
-
 /* ── 1. Overlay & wrapper ──────────────────────────────────────────────────── */
 
 #title-card-uwu {
@@ -15,49 +14,45 @@
   position:   absolute;
   inset:      0;
   overflow:   hidden;
-  display:    flex;
-  align-items: center;
-  justify-content: center;
-  transform-origin: center center;
 }
 
 /* ── 2. Texture / overlay image layers ────────────────────────────────────── */
 
 .itc-texture,
 .itc-overlay-image {
-  position:    absolute;
-  inset:       0;
-  width:       110%;
-  height:      110%;
-  top:         -5%;
-  left:        -5%;
+  position:            absolute;
+  inset:               0;
+  width:               110%;
+  height:              110%;
+  top:                 -5%;
+  left:                -5%;
   background-size:     cover;
   background-position: center;
   background-repeat:   repeat;
-  pointer-events: none;
+  pointer-events:      none;
 }
 
 .itc-overlay-image {
   background-repeat: no-repeat;
   background-size:   contain;
-  z-index: 1;
+  z-index:           1;
 }
 
 /* ── 3. Title text ─────────────────────────────────────────────────────────── */
 
+/* font-size is set inline from the titleSizeVw setting */
 .itc-content {
-  position:   relative;
+  position:   absolute;
   z-index:    2;
   text-align: center;
   padding:    0 4vw;
   width:      100%;
+  /* top & transform are set inline for vertical positioning */
 }
 
 .itc-title {
   display:        block;
   font-weight:    700;
-  font-style:     italic;
-  font-size:      clamp(4rem, 18vw, 22rem);
   line-height:    0.9;
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -115,12 +110,11 @@
 }
 
 .itc-dialog-buttons {
-  display:   flex;
-  gap:       0.5rem;
+  display:    flex;
+  gap:        0.5rem;
   margin-top: 0.25rem;
 }
 
-/* Override Foundry 100%-width default for buttons inside the dialog */
 .itc-dialog-buttons button {
   flex:    1;
   width:   auto;
@@ -141,7 +135,7 @@
 }
 
 .itc-vm-label {
-  font-weight: 600;
+  font-weight:  600;
   margin-right: 0.3em;
 }
 
@@ -186,7 +180,6 @@
   align-items: center;
 }
 
-/* Override Foundry 100%-width default for buttons in the variant manager */
 .itc-vm-row button {
   flex:  1;
   width: auto;
