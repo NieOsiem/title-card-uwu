@@ -105,6 +105,8 @@ function _resolveOptions(variantId) {
     titleFontUrl:       title.fontUrl,
     subtitleFontFamily: subtitle.fontFamily,
     subtitleFontUrl:    subtitle.fontUrl,
+    fadeDuration:       getSetting(SETTINGS.FADE_DURATION),
+    subtitleSpacing:    getSetting(SETTINGS.SUBTITLE_SPACING),
     soundPath:          variant.soundPath ?? (getSetting(SETTINGS.SOUND_PATH).trim() || null),
     overlayImage:       variant.overlayImage ?? null,
   };

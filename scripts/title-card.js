@@ -19,6 +19,8 @@ import { startZoom, fadeIn, fadeOut } from "./animator.js";
  * @property {number}      zoomPercent
  * @property {number}      titleSizeVw
  * @property {number}      verticalPosition    - 0–100
+ * @property {number}      fadeDuration        - ms
+ * @property {number}      subtitleSpacing     - vh units
  */
 
 class TitleCard {
@@ -99,6 +101,7 @@ class TitleCard {
       block.style.color      = o.textColor;
       block.style.fontFamily = `"${o.subtitleFontFamily}", "Oswald", sans-serif`;
       block.style.opacity    = "0";
+      block.style.marginTop  = `${o.subtitleSpacing}vh`;
 
       if (o.subtitle1) {
         const s1 = document.createElement("div");
@@ -121,13 +124,12 @@ class TitleCard {
   }
 
   #startAnimations() {
-    const o       = this.opts;
-    const wrapper = this.#el.querySelector(".itc-wrapper");
-    const block   = this.#el.querySelector(".itc-subtitle-block");
+    const o     = this.opts;
+    const block = this.#el.querySelector(".itc-subtitle-block");
 
     if (o.zoomPercent > 0) {
       this.#handles.push(
-        startZoom(wrapper, { zoomPercent: o.zoomPercent, duration: o.displayDuration })
+        startZoom(this.#el, { zoomPercent: o.zoomPercent, duration: o.displayDuration })
       );
     }
     if (block) {
@@ -138,8 +140,7 @@ class TitleCard {
   async #beginClose() {
     this.#handles.forEach(h => h.cancel());
     this.#handles = [];
-    const wrapper = this.#el?.querySelector(".itc-wrapper");
-    if (wrapper) await fadeOut(wrapper, { duration: 400 }).finished;
+    if (this.#el) await fadeOut(this.#el, { duration: this.opts.fadeDuration }).finished;
     this.#el?.remove();
     this.#el = null;
   }

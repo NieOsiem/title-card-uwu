@@ -66,6 +66,14 @@
         "Name": "Vertical Position (%)",
         "Hint": "Where the content sits vertically (0 = top, 50 = centre, 100 = bottom)."
       },
+      "FadeDuration": {
+        "Name": "Fade Out Duration (ms)",
+        "Hint": "How long the fade-out at the end takes. 0 disables the fade."
+      },
+      "SubtitleSpacing": {
+        "Name": "Subtitle Spacing (vh)",
+        "Hint": "Vertical gap between the title line and the subtitle block."
+      },
       "VariantManager": {
         "Name": "Variant Progression",
         "Label": "Manage Variants",

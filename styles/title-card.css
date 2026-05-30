@@ -4,16 +4,13 @@
   position:   fixed;
   inset:      0;
   z-index:    99999;
-  overflow:   hidden;
-  display:    flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .itc-wrapper {
-  position:   absolute;
-  inset:      0;
-  overflow:   hidden;
+  position:     absolute;
+  inset:        0;
+  overflow:     hidden;
+  will-change:  transform;
 }
 
 /* ── 2. Texture / overlay image layers ────────────────────────────────────── */
@@ -42,11 +39,15 @@
 
 /* font-size is set inline from the titleSizeVw setting */
 .itc-content {
-  position:   absolute;
-  z-index:    2;
-  text-align: center;
-  padding:    0 4vw;
-  width:      100%;
+  position:        absolute;
+  z-index:         2;
+  text-align:      center;
+  padding:         0 4vw;
+  width:           100%;
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  will-change:     transform;
   /* top & transform are set inline for vertical positioning */
 }
 
@@ -64,7 +65,6 @@
 /* ── 4. Subtitle block ─────────────────────────────────────────────────────── */
 
 .itc-subtitle-block {
-  margin-top: 2.5vh;
 }
 
 .itc-subtitle1 {

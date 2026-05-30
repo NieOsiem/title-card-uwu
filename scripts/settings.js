@@ -20,6 +20,8 @@ export const SETTINGS = Object.freeze({
   ZOOM_AMOUNT:              "zoomAmount",
   TITLE_SIZE_VW:            "titleSizeVw",
   VERTICAL_POSITION:        "verticalPosition",
+  FADE_DURATION:            "fadeDuration",
+  SUBTITLE_SPACING:         "subtitleSpacing",
   // Internal
   CURRENT_VARIANT_INDEX:    "currentVariantIndex",
 });
@@ -162,6 +164,22 @@ export function registerSettings() {
     scope:   "world", config: true, type: Number,
     range:   { min: 0, max: 100, step: 1 },
     default: 50,
+  });
+
+  game.settings.register(ns, S.FADE_DURATION, {
+    name:    "TITLECARDUWU.Settings.FadeDuration.Name",
+    hint:    "TITLECARDUWU.Settings.FadeDuration.Hint",
+    scope:   "world", config: true, type: Number,
+    range:   { min: 0, max: 2000, step: 100 },
+    default: 400,
+  });
+
+  game.settings.register(ns, S.SUBTITLE_SPACING, {
+    name:    "TITLECARDUWU.Settings.SubtitleSpacing.Name",
+    hint:    "TITLECARDUWU.Settings.SubtitleSpacing.Hint",
+    scope:   "world", config: true, type: Number,
+    range:   { min: 0, max: 10, step: 0.5 },
+    default: 2.5,
   });
 
   // ── Internal ─────────────────────────────────────────────────────────────
